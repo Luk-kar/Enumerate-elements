@@ -38,14 +38,35 @@ function enumerateFolders() {
 
         var folder = getFolder("layers")
         if (folder) {
-            alert("It works!")
+            var doc = app.activeDocument;
+            var folders = doc.layerSets.getByName(folder).layerSets;
+
+            var counter = renameElements(folders);
+            alert("Congrats! You renamed " + counter + " folders")
         }
 
     } else {
 
+        var doc = app.activeDocument;
+        var folders = doc.layerSets;
 
+        var counter = renameElements(folders);
+        alert("Congrats! You renamed " + counter + " folders")
     }
 
+}
+
+function renameElements(elements) {
+
+    var counter = 1;
+
+    for (var i = 0; i < elements.length; i++) {
+        var folderToRename = elements[i];
+        folderToRename.name = counter;
+        counter++;
+    }
+
+    return counter;
 }
 
 function enumerateLayers() {
@@ -53,12 +74,20 @@ function enumerateLayers() {
 
         var folder = getFolder("layers")
         if (folder) {
-            alert("It works!")
+            var doc = app.activeDocument;
+            var folders = doc.layerSets.getByName(folder).artLayers;
+
+            var counter = renameElements(folders);
+            alert("Congrats! You renamed " + counter + " layers")
         }
 
     } else {
 
+        var doc = app.activeDocument;
+        var layers = doc.artLayers;
 
+        var counter = renameElements(layers);
+        alert("Congrats! You renamed " + counter + " layers")
     }
 }
 
