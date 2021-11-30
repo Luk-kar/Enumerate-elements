@@ -1,3 +1,7 @@
+#include "./getFolder.jsx"
+#include "./notifyClientNumberOfChangedNames.jsx"
+#include "./renameElements.jsx"
+
 function enumerateFolders() {
 
     if (confirm("Do you want to choose folder to rename it's folders?")) {

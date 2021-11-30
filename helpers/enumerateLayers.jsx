@@ -1,4 +1,9 @@
+#include "./getFolder.jsx"
+#include "./notifyClientNumberOfChangedNames.jsx"
+#include "./renameElements.jsx"
+
 function enumerateLayers() {
+    
     if (confirm("Do you want to choose folder to rename it's layers?")) {
 
         var folder = getFolder("layers");

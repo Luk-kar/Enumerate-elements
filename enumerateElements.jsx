@@ -1,6 +1,8 @@
 #include "./helpers/isActiveDocument.jsx"
 #include "./helpers/runGUI.jsx"
 
+$.level = 1; // Debugging level, Level: 0 - No Break, 1 - Break, 2 - Immediate Break
+
 enumerateElements()
 
 function enumerateElements() {
